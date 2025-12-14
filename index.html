@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Naamrot.com</title>
+  <link rel="icon" href="aminah.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+  <div class="title-wrap">
+    <img src="aminah.jpg" alt="Aminah" class="logo">
+    <h1>NAAMROT.com</h1>
+  </div>
+</div>
+
+    <div class="card grid">
+      <div class="pane">
+        <label for="input">English input</label>
+        <textarea id="input" spellcheck="false" placeholder="Type English here..."></textarea>
+        <div class="controls">
+          <button id="convert">Convert</button>
+          <button id="clear" class="tinybtn" title="Clear input and output">Clear</button>
+          <!-- <div class="hint">Hyphens (-) and apostrophes (') split word-parts and re-join unchanged.</div> -->
+        </div>
+      </div>
+
+      <div class="pane">
+        <label for="output">Naamrot output</label>
+        <div id="output" class="out" aria-label="Converted output"></div>
+        <div class="row">
+          <!-- <div class="hint">Tip: Ctrl/⌘ + Enter converts. Exceptions list is editable in JS.</div> -->
+          <button id="copy" class="tinybtn" title="Copy output to clipboard">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
