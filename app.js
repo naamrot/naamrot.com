@@ -126,6 +126,23 @@ function replaceAllERWithAH(segs){
   return segs;
 }
 
+function replaceEndingYToEH(segs){
+  const s = segToString(segs).toUpperCase();
+
+  // Skip cases already handled elsewhere
+  if (s.endsWith("LY") || s.endsWith("LEY") || s.endsWith("TY")) {
+    return false;
+  }
+
+  // Final Y -> EH (happy, academy, gypsy)
+  if (s.endsWith("Y") && segs.length >= 1) {
+    spliceSegs(segs, segs.length - 1, segs.length, segFromString("EH", false));
+    return true;
+  }
+
+  return false;
+}
+
 /** If ends with LY -> LEH */
 function replaceEndingLY(segs){
   const s = segToString(segs).toUpperCase();
@@ -284,6 +301,7 @@ function transformWordPart(part){
   replaceEndingTY(segs);   
   segs = replaceEndingLY(segs);
   const endingChangedToAH = applyEndingAH(segs);
+  replaceEndingYToEH(segs);
 
   // 3) Prefix transforms
   segs = applyStartingUYoo(segs);
