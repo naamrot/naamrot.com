@@ -1,3 +1,4 @@
+
 :root{
   --bg:#0b0f14;
   --panel:#0f1620;
@@ -180,4 +181,126 @@ button:active{transform:translateY(1px)}
   font-weight:700;
   border-color:rgba(155,255,209,.35);
   background:linear-gradient(180deg, rgba(155,255,209,.18), rgba(155,255,209,.10));
+}
+/* ---------- Hamburger menu ---------- */
+.menu-btn{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  display: grid;
+  place-items: center;
+  gap: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+.menu-btn span{
+  display:block;
+  width: 18px;
+  height: 2px;
+  background: rgba(231,238,249,.85);
+  border-radius: 999px;
+}
+.menu-btn:hover{
+  border-color: rgba(122,162,255,.55);
+  box-shadow: 0 0 0 3px rgba(122,162,255,.10);
+}
+
+/* ---------- Overlay dim ---------- */
+.overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(2px);
+  z-index: 50;
+}
+
+/* ---------- Slide-in panel ---------- */
+.menu-panel{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100svh;
+  width: min(420px, 92vw);
+  background: linear-gradient(180deg, var(--panel), var(--panel2));
+  border-left: 1px solid var(--border);
+  box-shadow: -16px 0 50px rgba(0,0,0,.55);
+  z-index: 60;
+  transform: translateX(100%);
+  transition: transform .18s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-panel.open{
+  transform: translateX(0);
+}
+
+.menu-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+  padding: 14px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu-title{
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+.menu-close{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  cursor: pointer;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.menu-close:hover{
+  border-color: rgba(122,162,255,.55);
+}
+
+.menu-body{
+  padding: 14px 14px 22px;
+  overflow: auto;
+  font-family: var(--sans);
+  color: var(--text);
+}
+
+.menu-body h3{
+  margin: 10px 0 8px;
+  font-size: 16px;
+}
+.menu-body p, .menu-body li{
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 13px;
+}
+.menu-body ul{
+  padding-left: 18px;
+}
+.title-text{
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.version{
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .4px;
+  opacity: .45;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  user-select: none;
+}
+
+.version:hover{
+  opacity: .8;
 }
