@@ -9,12 +9,28 @@
 </head>
 <body>
   <div class="app">
-    <div class="topbar">
-  <div class="title-wrap">
-    <img src="Aminah.jpg" alt="Aminah" class="logo">
+   <div class="topbar">
+<div class="title-wrap">
+  <img src="aminah.jpg" alt="Aminah" class="logo">
+  <div class="title-text">
     <h1>NAAMROT.com</h1>
+<a
+  class="version"
+  href="https://github.com/naamrot/naamrot.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  v2.0
+</a>
   </div>
 </div>
+
+
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="menuPanel" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
 
     <div class="card grid">
       <div class="pane">
@@ -37,6 +53,134 @@
       </div>
     </div>
   </div>
+  <!-- Dim overlay -->
+<div class="overlay" id="overlay" hidden></div>
+
+<!-- Slide-in menu -->
+<aside class="menu-panel" id="menuPanel" aria-hidden="true">
+  <div class="menu-head">
+    <div class="menu-title">Naamrot.com</div>
+    <button class="menu-close" id="menuClose" aria-label="Close menu">✕</button>
+  </div>
+
+  <div class="menu-body">
+    <!-- Paste your rulebook text here (you can use headings + lists) -->
+    <p>
+      <h3>NAAMROT RULEBOOK</h3>
+<section>
+  <h4>Core Principles</h4>
+  <ul>
+    <li>Only words change; punctuation and spacing stay exactly the same.</li>
+    <li>Output is always <strong>ALL CAPS</strong>.</li>
+    <li>Hyphens (<code>-</code>) and apostrophes (<code>'</code>) split words into parts, which are transformed separately and re-joined.</li>
+    <li>Rules apply consistently across all words.</li>
+    <li>Some words are handled as exceptions for clarity and meaning.</li>
+  </ul>
+</section>
+
+<section>
+  <h4>Exceptions (Special Fixed Words)</h4>
+  <p>These words are always converted the same way:</p>
+  <ul>
+    <li><strong>VERY → WELL</strong></li>
+    <li><strong>WELL → WELL</strong></li>
+    <li><strong>YOU / YOUR → YA</strong></li>
+    <li><strong>THE → THA</strong></li>
+    <li><strong>FOR → FA</strong></li>
+    <li><strong>PLEASE → PALEASE</strong></li>
+    <li><strong>DEADLINE → DODLINE</strong></li>
+    <li><strong>MISTAKES → MOSTAKES</strong></li>
+    <li><strong>AMINUR → AMINAH</strong></li>
+    <li><strong>DATE → DATE</strong></li>
+    <li><strong>NAME → NAME</strong></li>
+    <li><strong>SET → SOT</strong></li>
+  </ul>
+</section>
+
+<section>
+  <h4>Prefix Sound Rules</h4>
+  <ul>
+    <li>
+      <strong>SN → SAN</strong><br>
+      SNAKE → SANAKE<br>
+      SNAGGED → SANAGGED<br>
+      SNEAK → SANEAK
+    </li>
+    <li>
+      <strong>SW → SAW</strong><br>
+      SWIFT → SAWIFT<br>
+      SWIRL → SAWARL
+    </li>
+    <li>
+      <strong>RE → RO</strong> (only when clearly pronounced “ree”)<br>
+      RE-ENTER → RE-ONTAH<br>
+      REASON remains unchanged
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h4>Consonant Cluster Expansion</h4>
+  <p>
+    Harsh starting consonant clusters are softened by inserting <strong>A</strong>.
+  </p>
+  <ul>
+    <li>
+      Two consonants followed by R (<code>__R</code>)<br>
+      CHROME → CHAROME<br>
+      SHRINK → SHARINK
+    </li>
+    <li>
+      Words starting with BR / CR / DR / FR / GR / PR / TR / BL / CL / FL / GL / PL / SL<br>
+      BROWN → BAROWN<br>
+      CLEAN → CALEAN
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h4>Internal Sound Changes</h4>
+  <ul>
+    <li>
+      <strong>IR → AR</strong><br>
+      SKIRT → SKART<br>
+      THIRSTY → THARSTEH
+    </li>
+    <li>
+      <strong>ER → AH</strong><br>
+      ENTER → ENTAH<br>
+      INTERNET → ONTAHNET
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h4>Ending Sound Rules</h4>
+  <ul>
+    <li><strong>A → AH</strong><br>UTOPIA → UTOPIAH</li>
+    <li><strong>ER / UR → AH</strong><br>LECTURER → LOCTURAH</li>
+    <li><strong>TION → SHAN</strong><br>INFORMATION → INFORMASHAN</li>
+    <li><strong>TY → TEH</strong><br>ABILITY → ABILITEH</li>
+    <li><strong>LY / LEY → LEH</strong><br>QUICKLY → QUICKLEH<br>BURNLEY → BURNLEH</li>
+    <li><strong>AY → AEH</strong><br>DAY → DAEH<br>TODAY → TODAEH</li>
+    <li><strong>Final Y (EE sound) → EH</strong><br>HAPPY → HOPPEH<br>ACADEMY → OCODEMEH</li>
+  </ul>
+</section>
+
+<section>
+  <h4>Vowel Behaviour</h4>
+  <ul>
+    <li>Only <strong>A, E, I</strong> may swap to <strong>O</strong>.</li>
+    <li>Inserted vowels never change.</li>
+    <li>If a word does not end in AH, the last vowel is protected.</li>
+    <li>If a word has exactly four vowels, the last two vowels are protected.</li>
+    <li>Vowel pairs like EA or IA are preserved.</li>
+  </ul>
+</section>
+    </p>
+  </div>
+</aside>
+
 
   <script src="./app.js"></script>
 </body>
